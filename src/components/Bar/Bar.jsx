@@ -4,7 +4,9 @@ const Bar = (props) => {
     const value = props.value;
     return ( 
         <div className='bar'>
-            {value}
+            <div className='bar-text'>
+                {value}
+            </div>
         </div>
      );
 }

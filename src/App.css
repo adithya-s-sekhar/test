@@ -2,9 +2,27 @@
   display: flex;
   gap: 50px;
   flex-direction: column;
+  padding: 8px;
+}
+
+.input{
+  padding: 8px;
+  width: 80%;
+}
+
+.input input{
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 1.2rem;
+}
+
+.visual{
+  padding: 8px;
 }
 
 .visual-box{
   display: flex;
   gap: 5px;
+  padding: 8px;
 }

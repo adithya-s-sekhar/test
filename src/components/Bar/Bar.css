@@ -1,4 +1,14 @@
 .bar{
-    border: 1px solid grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 10px;
+    border-radius: 10px;
+    background-color: purple;
+}
+
+.bar-text{
+    color: #fff;
+    font-weight: bold;
+    font-size: 2rem;
 }
