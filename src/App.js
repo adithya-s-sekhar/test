@@ -1,21 +1,29 @@
 import './App.css';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Bar from './components/Bar/Bar';
 import strToNum from './functions/strToNum';
-import bubbleSort from './functions/bubbleSort';
 
 function App() {
 
   const [arr_raw, setArrRaw] = useState('');
-  const [arr_sorted,setArrSorted] = useState('');
   let arr = new Array;
 
   arr = arr_raw.split(',');
   strToNum(arr);
-
-  useEffect(() => {
-    // setArrSorted(bubbleSort(arr));
-  },[arr]);
+  
+  let sorted;
+  do{
+    sorted = true;
+    for(let i=0;i<arr.length;i++){
+      if(arr[i] > arr[i+1]){
+        let tmp = arr[i];
+        arr[i] = arr[i+1];
+        arr[i+1] = tmp;
+        sorted = false;
+      }
+    }
+  }
+  while(!sorted);
 
   return (
     <div className="App">
