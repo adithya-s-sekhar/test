@@ -1,6 +1,7 @@
 import './App.css';
 import { useEffect, useState } from 'react';
 import Bar from './components/Bar/Bar';
+import Bold from './components/Bold/Bold';
 import strToNum from './functions/strToNum';
 import bubbleSort from './functions/bubbleSort';
 
@@ -28,11 +29,10 @@ function App() {
                 />
             </form>
         </div>
+        <div className='big-input'>
+          {arr && arr.map((i) => (<Bold text = { i }/>))}
+        </div>
         <div className='visual'>
-          <p>Unsorted Array</p>
-          <div className='visual-box'>
-            {arr && arr.map((i) => (<Bar value = { i }/>))}
-          </div>
           <p>Sorted Array</p>
           <div className='visual-box'>
             {arr_sorted && arr_sorted.map((i) => (<Bar value = { i }/>))}

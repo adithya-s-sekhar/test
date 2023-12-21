@@ -1,0 +1,7 @@
+.bold{
+    text-align: center;
+    font-weight: bold;
+    font-size: 3em;
+    border-right: 10px solid teal;
+    padding: 10px;
+}
