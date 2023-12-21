@@ -10,11 +10,12 @@ function App() {
   const [arr_sorted,setArrSorted] = useState('');
   let arr = new Array;
 
+  arr = arr_raw.split(',');
+  strToNum(arr);
+
   useEffect(() => {
-    arr = arr_raw.split(',');
-    strToNum(arr);
-    setArrSorted(bubbleSort(arr));
-  },[arr_raw]);
+    // setArrSorted(bubbleSort(arr));
+  },[arr]);
 
   return (
     <div className="App">
@@ -29,7 +30,7 @@ function App() {
         </div>
         <div className='visual'>
             <div className='visual-box'>
-            {arr_sorted && arr_sorted.map((i) => (<Bar value = { i }/>))}
+            {arr && arr.map((i) => (<Bar value = { i }/>))}
             </div>
         </div>
     </div>
