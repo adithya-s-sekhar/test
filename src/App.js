@@ -9,12 +9,12 @@ function App() {
   const [arr_raw, setArrRaw] = useState('');
   const [arr_sorted,setArrSorted] = useState('');
   let arr = new Array;
+  arr = arr_raw.split(',');
+  strToNum(arr);
 
-  useEffect(() => {
-    arr = arr_raw.split(',');
-    strToNum(arr);
-    setArrSorted(bubbleSort(arr));
-  },[arr_raw]);
+  useEffect(() =>{
+    setArrSorted(bubbleSort(arr))
+  },[arr])
 
   return (
     <div className="App">
@@ -24,13 +24,19 @@ function App() {
                     type='text'
                     placeholder='Comma-seperated values here'
                     onChange={(e) => setArrRaw(e.target.value)}
+                    autoFocus
                 />
             </form>
         </div>
         <div className='visual'>
-            <div className='visual-box'>
+          <p>Unsorted Array</p>
+          <div className='visual-box'>
+            {arr && arr.map((i) => (<Bar value = { i }/>))}
+          </div>
+          <p>Sorted Array</p>
+          <div className='visual-box'>
             {arr_sorted && arr_sorted.map((i) => (<Bar value = { i }/>))}
-            </div>
+          </div>
         </div>
     </div>
   );

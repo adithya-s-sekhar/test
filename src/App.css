@@ -3,11 +3,14 @@
   gap: 50px;
   flex-direction: column;
   padding: 8px;
+  align-items: center;
 }
 
 .input{
   padding: 8px;
   width: 80%;
+  opacity: 0;
+  height: 0;
 }
 
 .input input{
@@ -15,6 +18,7 @@
   padding: 10px;
   border-radius: 10px;
   font-size: 1.2rem;
+  height: 0;
 }
 
 .visual{
